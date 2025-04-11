@@ -10,10 +10,14 @@
 'use strict';
 
 import Player from "./player.js";
-import { CANVAS, CTX, MS_PER_FRAME, KEYS } from "./globals.js";
+import { CANVAS, CTX, MS_PER_FRAME, KEYS,ground } from "./globals.js";
 
 // Globals
 const HERO = new Player(20, 50, 48, 48);
+
+
+ground.x_pos = 0
+ground.x_pos2 = 1150
 
 let frame_time = performance.now()
 
@@ -30,7 +34,9 @@ document.addEventListener("contextmenu", (event) => {
  * The user pressed a key on the keyboard 
  */
 function keypress(event) {
-
+  if ([KEYS.W,KEYS.UP_ARROW,KEYS.SPACE].includes(event.keyCode)){
+    HERO.jump()
+  }
 }
 
 
@@ -54,6 +60,18 @@ function update() {
   // Clear the canvas
   CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
   
+  ground.x_pos -= 10
+  ground.x_pos2 -= 10
+
+  CTX.drawImage(ground,0,103,1150,26,ground.x_pos,300,1150,28)
+  CTX.drawImage(ground,1151,103,1149,26,ground.x_pos2,300,1150,28)
+
+  if (ground.x_pos <= -1150){
+    ground.x_pos = 1150
+  }
+  if (ground.x_pos2 <= -1150){
+    ground.x_pos2 = 1150
+  }
   // Draw our hero
   HERO.update();
   

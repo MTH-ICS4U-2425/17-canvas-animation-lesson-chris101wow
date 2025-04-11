@@ -19,8 +19,10 @@ export const FPS = 60;
 export const MS_PER_FRAME = 1000 / FPS;
 
 // Movement
+export let ground = new Image()
+ground.src = "../images/dino_large.png"
 export const GRAVITY = 1;
-export const FLOOR = CANVAS.height;  // Careful - if the height ever changes...
+export const FLOOR = CANVAS.height-70;  // Careful - if the height ever changes...
 
 // Some convenient keyboard codes
 export const KEYS = {
