@@ -72,19 +72,19 @@ export default class Player {
     // CTX.fillStyle = "yellow";
     // CTX.fillRect(this.position.x, this.position.y, this.width, this.height);
 
-    if(cntr <= 8){
+    if(cntr <= 11){
       CTX.drawImage(ground,1943,0,87,97,this.position.x,this.position.y,89,97)
 
     }else{
       CTX.drawImage(ground,1855,0,87,97,this.position.x,this.position.y,89,97)
 
     }
-    if(cntr == 16){
+    if(cntr == 22){
       cntr = 0
     }
+    if(this.bottom >= FLOOR)
     cntr += 1
-    console.log(cntr)
-    
+
     // CTX.drawImage(ground,1677,0,89,97,this.position.x,this.position.y,89,97)
 
   }

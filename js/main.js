@@ -10,11 +10,12 @@
 'use strict';
 
 import Player from "./player.js";
-import { CANVAS, CTX, MS_PER_FRAME, KEYS,ground } from "./globals.js";
+import { CANVAS, CTX, MS_PER_FRAME, KEYS,ground,randint } from "./globals.js";
+import Cactus from "./cactus.js";
 
 // Globals
 const HERO = new Player(20, 50, 48, 48);
-
+let counter = 0
 
 ground.x_pos = 0
 ground.x_pos2 = 1150
@@ -38,8 +39,10 @@ function keypress(event) {
     HERO.jump()
   }
 }
-
-
+let cacti = []
+for (let i = 0; i<6; i++){
+  cacti.push(new Cactus(0,0))
+}
 /**
  * The main game loop
  */
@@ -73,6 +76,12 @@ function update() {
     ground.x_pos2 = 1150
   }
   // Draw our hero
+  counter += 1
+  if(counter % 45 == 0){
+    if(!randint(0,3)){
+      console.log("julian cadieux")
+    }
+  }
   HERO.update();
   
 }
