@@ -15,10 +15,14 @@ body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
 }
-
+@font-face {
+  font-family:press-start-2p;
+  src: url('./PressStart2P-Regular.ttf');
+}
 canvas {
   background-color: #202124;
   border: 2px solid #333333;
+  font-family: press-start-2p;
 }
 
 .centered {

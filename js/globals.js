@@ -9,14 +9,14 @@
  */
 
 // Drawing / updating
-export function randint(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
 export const CANVAS = document.getElementById('game_canvas');
 export const CTX = CANVAS.getContext('2d', {
       powerPreference: "high-performance"
     });
   
+export function RandInt(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    }
 // FPS Trapping
 export const FPS = 60;
 export const MS_PER_FRAME = 1000 / FPS;
@@ -48,4 +48,5 @@ export const KEYS = {
 export function $(id) { return document.getElementById(id); }
 
 // Export all the constants by default
-export default { CANVAS, CTX, FPS, MS_PER_FRAME, GRAVITY, FLOOR, KEYS, $, randint }
+export default { CANVAS, CTX, FPS, MS_PER_FRAME, GRAVITY, FLOOR, KEYS, $,RandInt }
+
