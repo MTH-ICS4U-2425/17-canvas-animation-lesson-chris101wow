@@ -69,9 +69,11 @@ export default class Player {
    * Draw the player on the canvas
    */
   draw() {
+
     // CTX.fillStyle = "yellow";
     // CTX.fillRect(this.position.x, this.position.y, this.width, this.height);
     if(this.bottom < FLOOR){
+      console.log("heyyutyy")
       CTX.drawImage(ground,1677,0,89,97,this.position.x,this.position.y,89,97)
     }else{
       if(cntr <= 8){

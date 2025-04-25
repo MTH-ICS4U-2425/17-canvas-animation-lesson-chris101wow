@@ -37,7 +37,8 @@ export const KEYS = {
   W:87,
   A:65,
   S:83,
-  D:68
+  D:68,
+  ENTER : 13
 };
 
 /**
@@ -49,4 +50,3 @@ export function $(id) { return document.getElementById(id); }
 
 // Export all the constants by default
 export default { CANVAS, CTX, FPS, MS_PER_FRAME, GRAVITY, FLOOR, KEYS, $,RandInt }
-
